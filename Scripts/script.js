@@ -1,13 +1,28 @@
 let r = 1;
 let c = 1;
+let count = 0;
+
+function lost() {
+    document.getElementById("my_modal_5").children[0].children[0].innerText = "Oops! Game Over!";
+    document.getElementById("my_modal_5").children[0].children[1].innerText = "Mission not accomplished.";
+    document.getElementById("my_modal_5").children[0].children[2].children[0].children[0].innerText = "Retry";
+    document.getElementById("my_modal_5").showModal();
+}
 
 function goal() {
     const f = document.querySelectorAll(".box");
     f.forEach(element => {
         const t = [...element.classList];
         if (t.includes("star") && t.includes("selector") == true) {
-            document.getElementById("my_modal_5").showModal();
+            if (count == 1) {
+                document.getElementById("my_modal_5").showModal();
+            }
+        } else if (count > 1) {
+            lost();
         }
+        document.getElementById("my_modal_5").children[0].children[2].children[0].children[0].addEventListener('click', event => {
+            location.reload();
+        })
     });
 }
 
@@ -28,6 +43,7 @@ function up() {
     else {
         r = 5;
     }
+    count += 1;
 }
 
 function left() {
@@ -37,6 +53,7 @@ function left() {
     else {
         c = 5;
     }
+    count += 1;
 }
 
 function right() {
@@ -46,6 +63,7 @@ function right() {
     else {
         c = 1;
     }
+    count += 1;
 }
 
 function down() {
@@ -55,6 +73,7 @@ function down() {
     else {
         r = 1;
     }
+    count += 1;
 }
 
 inputKey = document.getElementById("input");

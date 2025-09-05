@@ -14,26 +14,17 @@
     <style>
         .box {
             border: 2px solid black;
-            height: 9rem;
-        }
-
-        @media screen and (max-width:576px) {
-            .box {
-                height: 5rem;
-            }
-
-            .star {
-                font-size: larger;
-            }
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="lg:text-4xl grid my-1 lg:mt-6 justify-center">
+    <h1 class="lg:text-4xl grid my-1 lg:mt-6 justify-center font-bold">
         Reach the star by moving once.
     </h1>
-    <div class="grid grid-cols-5 lg:mt-6 lg:mx-96 lg:px-40 mx-1">
+    <div class="grid grid-cols-5 grid-rows-5 lg:mt-6 mx-auto w-[21rem] lg:w-[32rem] h-[21rem] lg:h-[32rem]">
         <div class="box selector" id="r1-c1"></div>
         <div class="box" id="r1-c2"></div>
         <div class="box" id="r1-c3"></div>
@@ -62,15 +53,12 @@
     </div>
 
     <section>
-        <!-- Open the modal using ID.showModal() method -->
-        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
             <div class="modal-box">
                 <h3 class="text-4xl font-bold text-center">Yippee!</h3>
                 <p class="text-2xl mt-6 text-center">You have completed the level.</p>
                 <div class="modal-action">
                     <form method="dialog">
-                        <!-- if there is a button in form, it will close the modal -->
                         <button class="btn">Thanks</button>
                     </form>
                 </div>
@@ -78,7 +66,7 @@
         </dialog>
     </section>
 
-    <div class="lg:grid justify-center mt-4 hidden">
+    <div class="md:grid justify-center mt-4 hidden">
         <input type="text" id="input">
     </div>
 
