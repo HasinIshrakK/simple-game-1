@@ -1,3 +1,10 @@
 .selector{
     background-color: aqua;
 }
+
+.star{
+    font-size:xx-large;
+    display: grid;
+    text-align: center;
+    align-items: center; 
+}
