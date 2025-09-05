@@ -7,18 +7,20 @@
     <title>First game</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../Styles/style.css">
     <style>
         .box {
             border: 2px solid black;
-            /* background-color: white; */
             height: 150px;
         }
     </style>
 </head>
 
 <body>
-    <div class="grid grid-cols-5 mt-24 mx-96 px-40">
+    <div class="grid grid-cols-5 mt-20 mx-96 px-40">
         <div class="box selector" id="r1-c1"></div>
         <div class="box" id="r1-c2"></div>
         <div class="box" id="r1-c3"></div>
@@ -46,9 +48,26 @@
         <div class="box" id="r5-c5"></div>
     </div>
 
-<div>
-    <input type="text" id="input">
-</div>
+    <div class="grid justify-center mt-4">
+        <input type="text" id="input">
+    </div>
+
+    <div class="grid items-center justify-center text-4xl">
+        <button id="up">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+        <div class="flex gap-10">
+            <button id="left">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button id="right">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        <button id="down">
+            <i class="fa-solid fa-arrow-down"></i>
+        </button>
+    </div>
 
     <script src="../Scripts/script.js"></script>
 </body>
