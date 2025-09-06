@@ -24,6 +24,8 @@ function goal() {
             }
         }
         else if (count > 1) {
+            g = document.getElementById("positioner");
+            g.classList.remove("justify-between");
             lost();
         }
         document.getElementById("reload").addEventListener('click', event => {
