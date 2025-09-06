@@ -86,6 +86,9 @@ function down() {
 
 inputKey = document.getElementById("input");
 document.addEventListener("keyup", (event) => {
+
+    if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey || event.button === 3 || event.button === 4) return;
+
     if (event.key.toLowerCase() === "a" || event.key === "ArrowLeft") {
         left();
     }
