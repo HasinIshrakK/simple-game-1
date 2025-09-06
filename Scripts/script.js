@@ -5,7 +5,7 @@ let count = 0;
 function lost() {
     document.getElementById("my_modal_5").children[0].children[0].innerText = "Oops! Game Over!";
     document.getElementById("my_modal_5").children[0].children[1].innerText = "Mission not accomplished.";
-    document.getElementById("my_modal_5").children[0].children[2].children[0].children[0].innerText = "Retry";
+    document.getElementById("reload").innerText = "Retry";
     document.getElementById("my_modal_5").showModal();
 }
 
@@ -16,11 +16,17 @@ function goal() {
         if (t.includes("star") && t.includes("selector") == true) {
             if (count == 1) {
                 document.getElementById("my_modal_5").showModal();
+                g = document.getElementById("redirect");
+                g.classList.remove("hidden");
+                g.addEventListener('click', event => {
+                    window.location.href = "level2.html";
+                })
             }
-        } else if (count > 1) {
+        }
+        else if (count > 1) {
             lost();
         }
-        document.getElementById("my_modal_5").children[0].children[2].children[0].children[0].addEventListener('click', event => {
+        document.getElementById("reload").addEventListener('click', event => {
             location.reload();
         })
     });
@@ -77,17 +83,17 @@ function down() {
 }
 
 inputKey = document.getElementById("input");
-inputKey.addEventListener("keyup", (event) => {
-    if (event.key.toLowerCase() === "a") {
+document.addEventListener("keyup", (event) => {
+    if (event.key.toLowerCase() === "a" || event.key === "ArrowLeft") {
         left();
     }
-    else if (event.key.toLowerCase() === "d") {
+    else if (event.key.toLowerCase() === "d" || event.key === "ArrowRight") {
         right();
     }
-    else if (event.key.toLowerCase() === "w") {
+    else if (event.key.toLowerCase() === "w" || event.key === "ArrowUp") {
         up();
     }
-    else if (event.key.toLowerCase() === "s") {
+    else if (event.key.toLowerCase() === "s" || event.key === "ArrowDown") {
         down();
     }
     select();
@@ -115,3 +121,6 @@ document.getElementById("down").addEventListener('click', () => {
     select();
     goal();
 })
+
+
+console.log("Hey, what are you doing here? It's not a playground.")

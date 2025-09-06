@@ -12,19 +12,29 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./Styles/style.css">
     <style>
+        * {
+            background-color: lightblue;
+        }
+
         .box {
-            border: 2px solid black;
+            border: 1px solid gray;
             height: 100%;
             width: 100%;
+            background-color: white;
+        }
+
+        .selector {
+            background-color: aqua;
         }
     </style>
 </head>
 
 <body>
-    <h1 class="lg:text-4xl grid my-1 lg:mt-6 justify-center font-bold">
+    <h1 class="lg:text-4xl text-2xl my-4 grid lg:my-6 text-center font-bold">
         Reach the star by moving once.
     </h1>
-    <div class="grid grid-cols-5 grid-rows-5 lg:mt-6 mx-auto w-[21rem] lg:w-[32rem] h-[21rem] lg:h-[32rem]">
+    <div
+        class="grid grid-cols-5 grid-rows-5 bg-white border-2 border-gray-400 lg:mt-6 mx-auto w-[21rem] lg:w-[32rem] h-[21rem] lg:h-[32rem]">
         <div class="box selector" id="r1-c1"></div>
         <div class="box" id="r1-c2"></div>
         <div class="box" id="r1-c3"></div>
@@ -54,37 +64,40 @@
 
     <section>
         <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-            <div class="modal-box">
-                <h3 class="text-4xl font-bold text-center">Yippee!</h3>
-                <p class="text-2xl mt-6 text-center">You have completed the level.</p>
-                <div class="modal-action">
+            <div class="modal-box !bg-gradient-to-b from-sky-400 to-sky-300">
+                <h3 class="text-4xl font-bold text-center !bg-transparent">Yippee!</h3>
+                <p class="text-2xl mt-6 text-center !bg-transparent">You have completed the level.<br>Let's march ahead.</p>
+                <div class="modal-action !bg-transparent flex justify-between">
                     <form method="dialog">
-                        <button class="btn">Thanks</button>
+                        <button id="reload" class="btn !bg-white">No, thanks</button>
+                    </form>
+                    <form method="dialog">
+                        <button id="redirect" class="btn !bg-white hidden">Next</button>
                     </form>
                 </div>
             </div>
         </dialog>
     </section>
 
-    <div class="md:grid justify-center mt-4 hidden">
-        <input type="text" id="input">
-    </div>
-
-    <div class="grid items-center justify-center mt-4 lg:mt-0 text-4xl">
-        <button id="up">
-            <i class="fa-solid fa-arrow-up"></i>
-        </button>
-        <div class="flex gap-10">
-            <button id="left">
-                <i class="fa-solid fa-arrow-left"></i>
-            </button>
-            <button id="right">
-                <i class="fa-solid fa-arrow-right"></i>
+    <div class="grid items-center justify-center mt-4 text-4xl">
+        <div class="grid justify-center">
+            <button class="!bg-white p-1 rounded-lg" id="up">
+                <i class="!bg-transparent fa-solid fa-arrow-up"></i>
             </button>
         </div>
-        <button id="down">
-            <i class="fa-solid fa-arrow-down"></i>
-        </button>
+        <div class="flex space-x-12">
+            <button class="!bg-white p-1 rounded-lg" id="left">
+                <i class="!bg-white text-center fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="!bg-white p-1 rounded-lg" id="right">
+                <i class="!bg-white text-center fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="grid justify-center">
+            <button class="!bg-white p-1 rounded-lg" id="down">
+                <i class="!bg-transparent text-center fa-solid fa-arrow-down"></i>
+            </button>
+        </div>
     </div>
 
     <script src="./Scripts/script.js"></script>
